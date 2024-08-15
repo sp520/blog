@@ -69,52 +69,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-python快速入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2024/08/16/python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="article-date">
-  <time class="dt-published" datetime="2024-08-15T17:03:28.600Z" itemprop="datePublished">2024-08-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>类型可以用于比较，如type(‘123’)=&#x3D;str</p>
-<p>list[] tuple() ?dict{‘key’:’val’} function range<br>列表 元组 字典<br>str float int bool</p>
-<p>eval、int、float(str)  为数字类型的str转换类型  eval根据str自动分配int或者float<br>eval(‘1’)=&#x3D;1  eval(‘1+1’)=&#x3D;2</p>
-<h1 id="del-删除元素"><a href="#del-删除元素" class="headerlink" title="del 删除元素"></a>del 删除元素</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list、dict</span></span><br><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">del</span> <span class="built_in">list</span>[<span class="number">0</span>] <span class="comment"># 删除0位置的元素</span></span><br><span class="line"><span class="comment"># 字典同理</span></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">0</span>: <span class="number">1</span>, <span class="number">1</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">del</span> <span class="built_in">dict</span>[<span class="number">1</span>] </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dict</span>) <span class="comment"># &#123;0:1&#125;</span></span><br></pre></td></tr></table></figure>
-<h1 id="常见的bool条件-i-in-type"><a href="#常见的bool条件-i-in-type" class="headerlink" title="常见的bool条件 i in type"></a>常见的bool条件 i in type</h1><p>list、tuple、dict（key）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span> ,<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span> <span class="keyword">in</span> <span class="built_in">list</span>) <span class="comment"># True</span></span><br><span class="line"><span class="built_in">tuple</span>=(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">2</span> <span class="keyword">in</span> <span class="built_in">tuple</span>) <span class="comment"># True</span></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">0</span>: <span class="number">1</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="number">0</span> <span class="keyword">in</span> <span class="built_in">dict</span>) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span> <span class="keyword">in</span> <span class="built_in">dict</span>)<span class="comment"># False</span></span><br></pre></td></tr></table></figure>
-<h1 id="print-function"><a href="#print-function" class="headerlink" title="print(function)"></a>print(function)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print(values,sep,end,file,flush)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">print</span>)) <span class="comment"># builtin_function_or_method</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,sep=<span class="string">&#x27;-&#x27;</span>,end=<span class="string">&#x27;end&#x27;</span>) <span class="comment"># 1-2-3end sep分隔符</span></span><br><span class="line"><span class="comment"># file flush 暂时不看</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="cast"><a href="#cast" class="headerlink" title="cast"></a>cast</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>()</span><br><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>
-
-<h1 id="list（array）"><a href="#list（array）" class="headerlink" title="list（array）"></a>list（array）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = []</span><br><span class="line"><span class="built_in">list</span>.sort()  <span class="comment"># arg: key(function), reverse(bool) key就是cmp</span></span><br><span class="line"><span class="comment"># key=cmp cmp只能由一个形参，当前位置的元素list[i]</span></span><br><span class="line"><span class="comment"># 下列单独运行，上面忽略掉</span></span><br><span class="line"><span class="built_in">list</span> = [[<span class="string">&#x27;狗&#x27;</span>,<span class="string">&#x27;12&#x27;</span>],[<span class="string">&#x27;猫&#x27;</span>,<span class="string">&#x27;2&#x27;</span>]]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cmp</span>(<span class="params"><span class="built_in">list</span></span>):</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">list</span>[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span>.sort(key=cmp) <span class="comment"># sort 若无参数则默认取第一个元素（list[0][0]）根据字典序升序</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="for"><a href="#for" class="headerlink" title="for"></a>for</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">2</span>) <span class="comment"># 左闭右开 type(a) == range</span></span><br><span class="line"><span class="built_in">print</span>(a == <span class="built_in">range</span>) <span class="comment"># True</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>): <span class="comment"># 1 2 3 4 5 6 7 8 9 10 </span></span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">0</span>: <span class="number">1</span>, <span class="number">1</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">del</span> <span class="built_in">dict</span>[<span class="number">1</span>] </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dict</span>) <span class="comment"># &#123;0:1&#125;</span></span><br><span class="line"><span class="keyword">for</span> key,val <span class="keyword">in</span> <span class="built_in">dict</span>.items():</span><br><span class="line">	<span class="built_in">print</span>(key,val,sep=<span class="string">&#x27;:&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add = <span class="keyword">lambda</span> a, b: a + b  </span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">1</span>, <span class="number">5</span>)) <span class="comment"># 6</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># swap 便捷写法</span></span><br><span class="line">a=<span class="number">1</span>  </span><br><span class="line">b=<span class="number">2</span>  </span><br><span class="line">a,b=b,a  </span><br><span class="line"><span class="built_in">print</span>(a,b) <span class="comment"># 2,1</span></span><br></pre></td></tr></table></figure>
-<p>在 Python 中有时候会看到一个 def 函数:</p>
-<p>def sample(n_samples):<br>    pass</p>
-<p>该处的 pass 便是占据一个位置，因为如果定义一个空函数程序会报错，当你没有想好函数的内容是可以用 pass 填充，使程序可以正常运行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sp520.github.io/blog/2024/08/16/python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" data-id="clzvj56d600027kv10ts4e66i" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-test-article" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2024/08/16/test-article/" class="article-date">
@@ -141,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sp520.github.io/blog/2024/08/16/test-article/" data-id="clzvj56d400017kv1hkjs9yfc" data-title="test_article" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://sp520.github.io/blog/2024/08/16/test-article/" data-id="clzvj9i6c00015ov12r9w493n" data-title="test_article" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -192,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sp520.github.io/blog/2024/08/16/hello-world/" data-id="clzvj56d000007kv1dva98zc5" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://sp520.github.io/blog/2024/08/16/hello-world/" data-id="clzvj9i6600005ov11m5t53gb" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -233,10 +187,6 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/blog/2024/08/16/python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">(no title)</a>
-          </li>
         
           <li>
             <a href="/blog/2024/08/16/test-article/">test_article</a>
