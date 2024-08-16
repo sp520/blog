@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>SQL连接查询 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="连接查询12select * from a left join b;# 以左边（a）为主表    left join：以左表为主表，左表所有记录都会查询出来，若条件不符合，则拼接在右边的字段值为NULL 12-- 左表全部显示、没有符合条件的拼接在右的记录时显示NULLselect chu_id, chm_title from ch_user left join ch_message on chu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL连接查询">
+<meta property="og:url" content="https://sp520.github.io/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="连接查询12select * from a left join b;# 以左边（a）为主表    left join：以左表为主表，左表所有记录都会查询出来，若条件不符合，则拼接在右边的字段值为NULL 12-- 左表全部显示、没有符合条件的拼接在右的记录时显示NULLselect chu_id, chm_title from ch_user left join ch_message on chu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T15:21:34.000Z">
+<meta property="article:modified_time" content="2024-08-16T15:29:51.201Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sp520.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-SQL连接查询" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T15:21:34.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      SQL连接查询
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> a <span class="keyword">left</span> <span class="keyword">join</span> b;</span><br><span class="line"># 以左边（a）为主表</span><br></pre></td></tr></table></figure>
+
+
+
+<p>left join：以左表为主表，左表所有记录都会查询出来，若条件不符合，则拼接在右边的字段值为NULL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 左表全部显示、没有符合条件的拼接在右的记录时显示NULL</span></span><br><span class="line"><span class="keyword">select</span> chu_id, chm_title <span class="keyword">from</span> ch_user <span class="keyword">left</span> <span class="keyword">join</span> ch_message <span class="keyword">on</span> chu_id <span class="operator">=</span> chm_to_user_id;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>inner join: 无主表，若无匹配条件，则不显示</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 此处的条件必不成立，无记录返回</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> ch_user <span class="keyword">inner</span> <span class="keyword">join</span> ch_message <span class="keyword">on</span> chu_id <span class="operator">=</span> chm_id;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">any</span> 表示任意，只要 grade 大于任意一个 class_id 即可</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> stu <span class="keyword">where</span> grade <span class="operator">&gt;</span> <span class="keyword">any</span> (<span class="keyword">select</span> class_id <span class="keyword">in</span> stu);</span><br><span class="line"># <span class="keyword">all</span> 表示全部，需要grade 大于所有 class_id</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> stu <span class="keyword">where</span> grade <span class="operator">&gt;</span> <span class="keyword">all</span> (<span class="keyword">select</span> class_id <span class="keyword">in</span> stu);</span><br><span class="line"># exist 返回 <span class="literal">True</span> <span class="keyword">or</span> <span class="literal">False</span> 如果班里有人叫王五，则打印</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> class <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">where</span> sname<span class="operator">=</span><span class="string">&#x27;王五&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" data-id="clzww2z1v00019gv14jqg7hog" data-title="SQL连接查询" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Git实用操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">docker安装指南</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/08/">八月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/">IntelliJ_IDEA的使用</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/">Git实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">SQL连接查询</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">docker安装指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/">关于后端开发的术语标准写法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

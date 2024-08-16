@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>spring_boot碎碎念 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="术语DTO： 向服务端请求的数据对象，无所谓，写啥也可 VO：向用户端发送到的数据对象 jpa orm try-catch-finally里return放抛出异常前会导致抛不出 rebuild project解决玄学报错类似idea项目运行时出现错误：Error:Kotlin: Module was compiled with an incompatible version of Kotlin……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring_boot碎碎念">
+<meta property="og:url" content="https://sp520.github.io/blog/2024/08/16/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="术语DTO： 向服务端请求的数据对象，无所谓，写啥也可 VO：向用户端发送到的数据对象 jpa orm try-catch-finally里return放抛出异常前会导致抛不出 rebuild project解决玄学报错类似idea项目运行时出现错误：Error:Kotlin: Module was compiled with an incompatible version of Kotlin……">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T10:57:06.000Z">
+<meta property="article:modified_time" content="2024-08-16T15:30:57.777Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sp520.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-学习过程中的一些知识点" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T10:57:06.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      spring_boot碎碎念
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><p>DTO： 向服务端请求的数据对象，无所谓，写啥也可</p>
+<p>VO：向用户端发送到的数据对象</p>
+<p>jpa orm</p>
+<p>try-catch-finally里return放抛出异常前会导致抛不出</p>
+<h3 id="rebuild-project解决玄学报错"><a href="#rebuild-project解决玄学报错" class="headerlink" title="rebuild project解决玄学报错"></a>rebuild project解决玄学报错</h3><p>类似idea项目运行时出现错误：Error:Kotlin: Module was compiled with an incompatible version of Kotlin……</p>
+<p>在IDEA工具栏中点击Build，选择Rebuild Project</p>
+<h3 id="业务层开发-Service"><a href="#业务层开发-Service" class="headerlink" title="业务层开发(Service)"></a>业务层开发(Service)</h3><p> 数据层开发告一段落，下面进行业务层开发，其实标准业务层开发很多初学者认为就是调用数据层，怎么说呢？这个理解是没有大问题的，更精准的说法应该是组织业务逻辑功能，并根据业务需求，对数据持久层发起调用。有什么差别呢？目标是为了组织出符合需求的业务逻辑功能，至于调不调用数据层还真不好说，有需求就调用，没有需求就不调用。</p>
+<p> 一个常识性的知识普及一下，业务层(Service)的方法名定义一定要与业务有关，例如登录操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean <span class="title function_">login</span><span class="params">(String username,String password)</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p> 而数据层(Mapper)的方法名定义一定与业务无关，是一定，不是可能，也不是有可能，例如根据用户名密码查询</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean <span class="title function_">selectByUserNameAndPassword</span><span class="params">(String username,String password)</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="控制层开发（Controller）"><a href="#控制层开发（Controller）" class="headerlink" title="控制层开发（Controller）"></a>控制层开发（Controller）</h3><h4 id="携带日期访问api"><a href="#携带日期访问api" class="headerlink" title="携带日期访问api"></a>携带日期访问api</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat(timezone = &quot;GMT+8&quot;, pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)</span> <span class="comment">// 返回前端的</span></span><br><span class="line"><span class="meta">@DateTimeFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)</span> <span class="comment">// 传到后端的</span></span><br><span class="line"><span class="comment">// 根据参数类型设置pattern，如果只有天数就写yyyy-MM-dd</span></span><br><span class="line"><span class="comment">// 携带的参数一般是Date、而返回的是LocalDate、LocalDateTime</span></span><br></pre></td></tr></table></figure>
+
+<p>（但转换错误）使用 java.time 包：这是 Java 8 引入的新 API，提供了更为现代和灵活的方式来处理日期和时间。例如，你可以使用 LocalDate、LocalDateTime 等类来处理日期和时间。</p>
+<h4 id="接口中的对象形参"><a href="#接口中的对象形参" class="headerlink" title="接口中的对象形参"></a>接口中的对象形参</h4><p>如果一个接口的请求参数包含对象，直接写对象字段，直接传 ?pageNum&#x3D;2&amp;pageSize&#x3D;3&amp;type&#x3D;计算机理论</p>
+<p>不建议这样写，一般都是封装一个SearchForm，分页信息也在里面</p>
+<p>单个基础数据类型参数，需要添加@RequestParam，将swagger的参数类型从body转为string</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/search&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result&lt;List&lt;Book&gt;&gt; <span class="title function_">search</span><span class="params">(<span class="type">int</span> pageNum, <span class="type">int</span> pageSize, Book condition)</span> &#123;</span><br><span class="line">    System.out.println(pageNum);</span><br><span class="line">    System.out.println(pageSize);</span><br><span class="line">    System.out.println(condition);</span><br><span class="line">    List&lt;Book&gt; pageByCondition = bookService.getPageByCondition(pageNum, pageSize, condition);</span><br><span class="line">    <span class="keyword">return</span> Result.ok(pageByCondition);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="配置（Config）"><a href="#配置（Config）" class="headerlink" title="配置（Config）"></a>配置（Config）</h3><h4 id="自定义bean加载属性"><a href="#自定义bean加载属性" class="headerlink" title="自定义bean加载属性"></a>自定义bean加载属性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.library.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> nishuping</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2024/7/30</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 13:48</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;servers&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServerConfig</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String ip;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> port;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> timeout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">servers.ip</span>=<span class="string">127.0.0.1</span></span><br><span class="line"><span class="attr">servers.port</span>=<span class="string">8080</span></span><br><span class="line"><span class="attr">servers.timeout</span>=<span class="string">3000</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">ServerConfig serverConfig;</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testConfiguration</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.println(serverConfig);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ServerConfig(ip=127.0.0.1, port=8080, timeout=3000)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="第三方bean加载属性"><a href="#第三方bean加载属性" class="headerlink" title="第三方bean加载属性"></a>第三方bean加载属性</h4><h3 id="MybatisPlus"><a href="#MybatisPlus" class="headerlink" title="MybatisPlus"></a>MybatisPlus</h3><h4 id="MP分页、复杂查询"><a href="#MP分页、复杂查询" class="headerlink" title="MP分页、复杂查询"></a>MP分页、复杂查询</h4><p>分页配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.base.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.DbType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MpConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//配置分页插件</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 分页插件</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MybatisPlusInterceptor <span class="title function_">optimisticLockerInnerInterceptor</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">MybatisPlusInterceptor</span> <span class="variable">interceptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MybatisPlusInterceptor</span>();</span><br><span class="line">        <span class="comment">//向Mybatis过滤器链中添加分页拦截器</span></span><br><span class="line">        interceptor.addInnerInterceptor(<span class="keyword">new</span> <span class="title class_">PaginationInnerInterceptor</span>(DbType.MYSQL));</span><br><span class="line">        <span class="keyword">return</span> interceptor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="comment">#mapper配置文件</span></span><br><span class="line">  <span class="attr">mapper-locations:</span> <span class="string">classpath:mapper/*.xml</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.example.base.po</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="comment">#开启驼峰命名</span></span><br><span class="line">    <span class="attr">map-underscore-to-camel-case:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 开启日志</span></span><br><span class="line">    <span class="attr">log-impl:</span> <span class="string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>api接口直接返回IPage即可</p>
+<p>若是不分页或者其他操作，且只有一个包装类型，那么可以直接使用属性名（不需要类似user.id）</p>
+<p>模糊查询常用CONCAT(‘%’, #{name} ,’%’)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 根据消息表各字段查询</span></span><br><span class="line"><span class="comment">  *</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@param</span> foregroundChMessageSearchForm</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">IPage&lt;ForegroundChMessageVo&gt; <span class="title function_">selectByFormAndIds</span><span class="params">(Page&lt;ForegroundChMessageVo&gt; page, ForegroundChMessageSearchForm foregroundChMessageSearchForm, List&lt;String&gt; toUserIds)</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">&quot;base_column_list_vo&quot;</span>&gt;</span></span><br><span class="line">        CASE</span><br><span class="line">        WHEN CHM_IS_SEND = 0 THEN 0</span><br><span class="line">        WHEN CHM_IS_SEND = 1 THEN 1</span><br><span class="line">        ELSE NULL</span><br><span class="line">        END AS SHOW_SEND, CHM_ID, CHM_TITLE, CHM_CONTENT, CHM_TYPE, &#x27;系统用户&#x27; AS CHM_FROM_USER_NAME, TO_USER.CHU_NICK_NAME  AS CHM_TO_USER_NAME, CHM_IS_READ, CHM_IS_SEND, CHM_SEND_TIME, CHM.CREATE_TIME</span><br><span class="line">    <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectByFormAndIds&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.rdwl.faworkflow.modules.foregrounduser.vo.ForegroundChMessageVo&quot;</span>&gt;</span></span><br><span class="line">        SELECT</span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">&quot;base_column_list_vo&quot;</span>/&gt;</span></span><br><span class="line">        FROM ch_message CHM</span><br><span class="line">        LEFT JOIN ch_user TO_USER ON CHM.CHM_TO_USER_ID = TO_USER.CHU_ID</span><br><span class="line">        WHERE CHM.DEL_FLAG = 0</span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;toUserIds != null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CHM_TO_USER_ID IN</span><br><span class="line">            <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">&quot;id&quot;</span> <span class="attr">collection</span>=<span class="string">&quot;toUserIds&quot;</span> <span class="attr">open</span>=<span class="string">&quot;(&quot;</span> <span class="attr">separator</span>=<span class="string">&quot;,&quot;</span> <span class="attr">close</span>=<span class="string">&quot;)&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;id != null and id != &#x27;&#x27;&quot;</span>&gt;</span></span><br><span class="line">                    #&#123;id&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.chmIsRead!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM_IS_READ = #&#123;foregroundChMessageSearchForm.chmIsRead&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.chmIsSend!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM_IS_SEND = #&#123;foregroundChMessageSearchForm.chmIsSend&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.startChmSendTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CHM_SEND_TIME &gt;= #&#123;foregroundChMessageSearchForm.startChmSendTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.endChmSendTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CHM_SEND_TIME <span class="symbol">&amp;lt;</span>= #&#123;foregroundChMessageSearchForm.endChmSendTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.startCreateTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CREATE_TIME &gt;= #&#123;foregroundChMessageSearchForm.startCreateTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.endCreateTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CREATE_TIME <span class="symbol">&amp;lt;</span>= #&#123;foregroundChMessageSearchForm.endCreateTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="测试功能"><a href="#测试功能" class="headerlink" title="测试功能"></a>测试功能</h3><p>@Transactional在Test里会自动回滚</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BookServiceTest</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> IBookService bookService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetById</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(bookService.getById(<span class="number">4</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testSave</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Book</span> <span class="variable">book</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Book</span>();</span><br><span class="line">        book.setType(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        book.setName(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        book.setDescription(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        bookService.save(book);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testUpdate</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Book</span> <span class="variable">book</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Book</span>();</span><br><span class="line">        book.setId(<span class="number">17</span>);</span><br><span class="line">        book.setType(<span class="string">&quot;-----------------&quot;</span>);</span><br><span class="line">        book.setName(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        book.setDescription(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        bookService.updateById(book);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testDelete</span><span class="params">()</span>&#123;</span><br><span class="line">        bookService.removeById(<span class="number">18</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">        bookService.list();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetPage</span><span class="params">()</span>&#123;</span><br><span class="line">        IPage&lt;Book&gt; page = <span class="keyword">new</span> <span class="title class_">Page</span>&lt;Book&gt;(<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line">        bookService.page(page);</span><br><span class="line">        System.out.println(page.getCurrent());</span><br><span class="line">        System.out.println(page.getSize());</span><br><span class="line">        System.out.println(page.getTotal());</span><br><span class="line">        System.out.println(page.getPages());</span><br><span class="line">        System.out.println(page.getRecords());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Swagger常用注解"><a href="#Swagger常用注解" class="headerlink" title="Swagger常用注解"></a>Swagger常用注解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Api(tags = &quot;功能模块名称&quot;)</span> <span class="comment">// tags 不能省略</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaseController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;api接口名称&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/test&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 返回日期类型成功格式化，包括日期和时间</span></span><br><span class="line">        <span class="keyword">return</span> LocalDateTime.now();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName(&quot;tbl_book&quot;)</span></span><br><span class="line"><span class="meta">@ApiModel(&quot;Book对象&quot;)</span>  <span class="comment">// 作用不清楚，写就完了，增加代码可读性</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Book</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableId(value = &quot;id&quot;, type = IdType.AUTO)</span></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;id&quot;)</span> <span class="comment">// 备注字段的意义，调试时的提示</span></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;类型&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String type;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;书名&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;描述&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String description;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="依赖包相关"><a href="#依赖包相关" class="headerlink" title="依赖包相关"></a>依赖包相关</h3><p> 朦朦胧胧中感觉starter与parent好像都是帮助我们简化配置的，但是功能又不一样，梳理一下。</p>
+<p> starter是一个坐标中定了若干个坐标，以前写多个的，现在写一个，是用来减少依赖配置的书写量的。</p>
+<p> parent是定义了几百个依赖版本号，以前写依赖需要自己手工控制版本，现在由SpringBoot统一管理，这样就不存在版本冲突了，是用来减少依赖冲突的。</p>
+<p>实际开发应用方式</p>
+<p>实际开发中如果需要用什么技术，先去找有没有这个技术对应的starter</p>
+<p>如果有对应的starter，直接写starter，而且无需指定版本，版本由parent提供<br>如果没有对应的starter，手写坐标即可<br>实际开发中如果发现坐标出现了冲突现象，确认你要使用的可行的版本号，使用手工书写的方式添加对应依赖，覆盖SpringBoot提供给我们的配置管理</p>
+<p>方式一：直接写坐标<br>方式二：覆盖中定义的版本号，就是下面这堆东西了，哪个冲突了覆盖哪个就OK了</p>
+<p>ps: 命名规则：spring-boot-starter-技术名称</p>
+<h3 id="properties文件"><a href="#properties文件" class="headerlink" title="properties文件"></a>properties文件</h3><p>SIT(System Integrate Test)：系统整合测试</p>
+<p>UAT(User Acceptance Test)：用户验收测试</p>
+<p>PROD(Production)：生产 &#x2F; 正式</p>
+<p>DEV(Development)：开发</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用application-dev.properties</span></span><br><span class="line"><span class="attr">spring.profiles.active</span>=<span class="string">dev</span></span><br><span class="line"><span class="comment"># 提取重复的前缀</span></span><br><span class="line"><span class="attr">baseDir</span>=<span class="string">localhost:8080</span></span><br><span class="line"><span class="comment"># 使用上述前缀</span></span><br><span class="line"><span class="attr">book.name</span>=<span class="string">$&#123;baseDir&#125;/name</span></span><br><span class="line"><span class="comment"># 使用转义字符 </span></span><br><span class="line"><span class="attr">book.description</span>=<span class="string">小红帽\t黑</span></span><br><span class="line"><span class="attr">book.price</span>=<span class="string">110</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Linux相关操作"><a href="#Linux相关操作" class="headerlink" title="Linux相关操作"></a>Linux相关操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询端口</span></span><br><span class="line">netstat -ano</span><br><span class="line"><span class="comment"># 查询指定端口</span></span><br><span class="line">netstat -ano |findstr <span class="string">&quot;端口号&quot;</span></span><br><span class="line"><span class="comment"># 根据进程PID查询进程名称</span></span><br><span class="line">tasklist |findstr <span class="string">&quot;进程PID号&quot;</span></span><br><span class="line"><span class="comment"># 根据PID杀死任务</span></span><br><span class="line">taskkill /F /PID <span class="string">&quot;进程PID号&quot;</span></span><br><span class="line"><span class="comment"># 根据进程名称杀死任务</span></span><br><span class="line">taskkill -f -t -im <span class="string">&quot;进程名称&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按指定端口运行Java项目，server.port就是application.properties里的字段	</span></span><br><span class="line">java –jar springboot.jar –-server.port=80</span><br><span class="line"><span class="comment"># 如果你修改的属性不止一个，可以按照上述格式继续写，属性与属性之间使用空格分隔。</span></span><br><span class="line">java –jar springboot.jar –-server.port=80 --logging.level.root=debug</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="日志（回写省内存）"><a href="#日志（回写省内存）" class="headerlink" title="日志（回写省内存）"></a>日志（回写省内存）</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">	<span class="attr">logback:</span></span><br><span class="line">    	<span class="attr">rollingpolicy:</span></span><br><span class="line">        	<span class="attr">max-file-size:</span> <span class="string">3KB</span></span><br><span class="line">            <span class="attr">file-name-pattern:</span> <span class="string">server.%d&#123;yyyy-MM-dd&#125;.%i.log</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h3><h4 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h4><p>Eureka：注册服务</p>
+<p>Ribbon：负载均衡、轮询</p>
+<p>Feign：动态代理、拼接url请求</p>
+<p>Hystrix：请求 线程池、避免服务雪崩</p>
+<p>Zuul：路由、网关</p>
+<h3 id="Node设置镜像"><a href="#Node设置镜像" class="headerlink" title="Node设置镜像"></a>Node设置镜像</h3><p>npm config set registry <a target="_blank" rel="noopener" href="http://registry.npmmirror.com/">http://registry.npmmirror.com</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" data-id="clzww2z2600089gv1113l005b" data-title="spring_boot碎碎念" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          关于后端开发的术语标准写法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2024/08/16/hexo%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">hexo一键部署指南</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/08/">八月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/">IntelliJ_IDEA的使用</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/">Git实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">SQL连接查询</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">docker安装指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/">关于后端开发的术语标准写法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

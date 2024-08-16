@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Git实用操作 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="——以下操作建议使用IDE自带的图形化界面替代 日常操作对于一个新项目，从仓库dev分支克隆代码后创建自己的分支 1234git clone url# 新建分支并切换git checkout -b dev-nishupinggit push url  开发功能切记在自己分支上操作 12345678910111213# 提交并推送自己的分支git commitgit push# 切换分支git ch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git实用操作">
+<meta property="og:url" content="https://sp520.github.io/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="——以下操作建议使用IDE自带的图形化界面替代 日常操作对于一个新项目，从仓库dev分支克隆代码后创建自己的分支 1234git clone url# 新建分支并切换git checkout -b dev-nishupinggit push url  开发功能切记在自己分支上操作 12345678910111213# 提交并推送自己的分支git commitgit push# 切换分支git ch">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T15:21:58.000Z">
+<meta property="article:modified_time" content="2024-08-16T15:30:05.094Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sp520.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Git实用操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T15:21:58.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Git实用操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>——以下操作建议使用IDE自带的图形化界面替代</p>
+<h3 id="日常操作"><a href="#日常操作" class="headerlink" title="日常操作"></a>日常操作</h3><p>对于一个新项目，从仓库dev分支克隆代码后创建自己的分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> url</span><br><span class="line"><span class="comment"># 新建分支并切换</span></span><br><span class="line">git checkout -b dev-nishuping</span><br><span class="line">git push url</span><br></pre></td></tr></table></figure>
+
+<p>开发功能切记在自己分支上操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提交并推送自己的分支</span></span><br><span class="line">git commit</span><br><span class="line">git push</span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout dev</span><br><span class="line"><span class="comment"># 拉取代码，防止远端与本地仓库版本号不一导致冲突</span></span><br><span class="line">git pull </span><br><span class="line"><span class="comment"># 将dev-nsp分支合并到dev分支</span></span><br><span class="line">git merge dev-nishuping</span><br><span class="line"><span class="comment"># 推送</span></span><br><span class="line">git push</span><br><span class="line"><span class="comment"># 推送完切回自己分支，防止下次粗心直接提交到dev，养成良好习惯</span></span><br><span class="line">git checkout dev-nishuping</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h3><p>提交代码后还想提交，但不想有两次记录？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+
+
+<p>提交了错误代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法之一</span></span><br><span class="line">git <span class="built_in">log</span>  <span class="comment"># 查看上次提交的版本号 </span></span><br><span class="line">git reset &lt;commit-hash&gt;  <span class="comment"># 将HEAD指针移动到指定的提交哈希，保留工作目录和暂存区的更改</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 另一种方法</span></span><br><span class="line">git reset HEAD~1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>提交并推送了错误代码？（未验证）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git revert 版本号</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/" data-id="clzww2z1p00009gv12k2mbgij" data-title="Git实用操作" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          IntelliJ_IDEA的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">SQL连接查询</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/08/">八月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/">IntelliJ_IDEA的使用</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/">Git实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">SQL连接查询</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">docker安装指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/">关于后端开发的术语标准写法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

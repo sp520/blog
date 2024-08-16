@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="对于收藏的那些技术文档，等有空了就去看，边看边做小demo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://sp520.github.io/blog/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对于收藏的那些技术文档，等有空了就去看，边看边做小demo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sp520.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-IntelliJ-IDEA的使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T15:22:31.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/">IntelliJ_IDEA的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>多用structure，定位代码很好用</p>
+<p>AI插件通义灵码（TONGYI）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="clzww2z1x00029gv12h196jjx" data-title="IntelliJ_IDEA的使用" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Git实用操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T15:21:58.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/">Git实用操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>——以下操作建议使用IDE自带的图形化界面替代</p>
+<h3 id="日常操作"><a href="#日常操作" class="headerlink" title="日常操作"></a>日常操作</h3><p>对于一个新项目，从仓库dev分支克隆代码后创建自己的分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> url</span><br><span class="line"><span class="comment"># 新建分支并切换</span></span><br><span class="line">git checkout -b dev-nishuping</span><br><span class="line">git push url</span><br></pre></td></tr></table></figure>
+
+<p>开发功能切记在自己分支上操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提交并推送自己的分支</span></span><br><span class="line">git commit</span><br><span class="line">git push</span><br><span class="line"><span class="comment"># 切换分支</span></span><br><span class="line">git checkout dev</span><br><span class="line"><span class="comment"># 拉取代码，防止远端与本地仓库版本号不一导致冲突</span></span><br><span class="line">git pull </span><br><span class="line"><span class="comment"># 将dev-nsp分支合并到dev分支</span></span><br><span class="line">git merge dev-nishuping</span><br><span class="line"><span class="comment"># 推送</span></span><br><span class="line">git push</span><br><span class="line"><span class="comment"># 推送完切回自己分支，防止下次粗心直接提交到dev，养成良好习惯</span></span><br><span class="line">git checkout dev-nishuping</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h3><p>提交代码后还想提交，但不想有两次记录？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+
+
+
+<p>提交了错误代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法之一</span></span><br><span class="line">git <span class="built_in">log</span>  <span class="comment"># 查看上次提交的版本号 </span></span><br><span class="line">git reset &lt;commit-hash&gt;  <span class="comment"># 将HEAD指针移动到指定的提交哈希，保留工作目录和暂存区的更改</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 另一种方法</span></span><br><span class="line">git reset HEAD~1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>提交并推送了错误代码？（未验证）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br><span class="line">git revert 版本号</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/" data-id="clzww2z1p00009gv12k2mbgij" data-title="Git实用操作" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SQL连接查询" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T15:21:34.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">SQL连接查询</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> a <span class="keyword">left</span> <span class="keyword">join</span> b;</span><br><span class="line"># 以左边（a）为主表</span><br></pre></td></tr></table></figure>
+
+
+
+<p>left join：以左表为主表，左表所有记录都会查询出来，若条件不符合，则拼接在右边的字段值为NULL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 左表全部显示、没有符合条件的拼接在右的记录时显示NULL</span></span><br><span class="line"><span class="keyword">select</span> chu_id, chm_title <span class="keyword">from</span> ch_user <span class="keyword">left</span> <span class="keyword">join</span> ch_message <span class="keyword">on</span> chu_id <span class="operator">=</span> chm_to_user_id;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>inner join: 无主表，若无匹配条件，则不显示</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 此处的条件必不成立，无记录返回</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> ch_user <span class="keyword">inner</span> <span class="keyword">join</span> ch_message <span class="keyword">on</span> chu_id <span class="operator">=</span> chm_id;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">any</span> 表示任意，只要 grade 大于任意一个 class_id 即可</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> stu <span class="keyword">where</span> grade <span class="operator">&gt;</span> <span class="keyword">any</span> (<span class="keyword">select</span> class_id <span class="keyword">in</span> stu);</span><br><span class="line"># <span class="keyword">all</span> 表示全部，需要grade 大于所有 class_id</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> stu <span class="keyword">where</span> grade <span class="operator">&gt;</span> <span class="keyword">all</span> (<span class="keyword">select</span> class_id <span class="keyword">in</span> stu);</span><br><span class="line"># exist 返回 <span class="literal">True</span> <span class="keyword">or</span> <span class="literal">False</span> 如果班里有人叫王五，则打印</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> class <span class="keyword">where</span> <span class="keyword">exists</span> (<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">where</span> sname<span class="operator">=</span><span class="string">&#x27;王五&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" data-id="clzww2z1v00019gv14jqg7hog" data-title="SQL连接查询" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-docker安装指南" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T15:21:22.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">docker安装指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>飞书链接：<a target="_blank" rel="noopener" href="https://b11et3un53m.feishu.cn/wiki/MWQIw4Zvhil0I5ktPHwcoqZdnec?from=from_copylink">https://b11et3un53m.feishu.cn/wiki/MWQIw4Zvhil0I5ktPHwcoqZdnec?from=from_copylink</a><br>密码：j.N?-+4[</p>
+<p>ifconfig用不了怎么看ip</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 找ifcfg文件看ip</span></span><br><span class="line"><span class="built_in">cd</span> /etc/sysconfig/network-scripts/</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>——上面链接详细，但有些镜像已过时或操作缺失</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">卸载旧仓库</span></span><br><span class="line">yum remove docker \</span><br><span class="line">    docker-client \</span><br><span class="line">    docker-client-latest \</span><br><span class="line">    docker-common \</span><br><span class="line">    docker-latest \</span><br><span class="line">    docker-latest-logrotate \</span><br><span class="line">    docker-logrotate \</span><br><span class="line">    docker-engine \</span><br><span class="line">    docker-selinux </span><br><span class="line">    </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置yum仓库</span></span><br><span class="line">sudo sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo</span><br><span class="line">sudo sed -i s/^#.*baseurl=http/baseurl=https/g /etc/yum.repos.d/*.repo</span><br><span class="line">sudo sed -i s/^mirrorlist=http/#mirrorlist=https/g /etc/yum.repos.d/*.repo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装一个yum工具</span></span><br><span class="line">sudo yum install -y yum-utils</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">配置Docker的yum源（已更新为阿里云源）</span></span><br><span class="line">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">sudo sed -i &#x27;s+download.docker.com+mirrors.aliyun.com/docker-ce+&#x27; /etc/yum.repos.d/docker-ce.repo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新yum，建立缓存</span></span><br><span class="line">sudo yum makecache fast</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装docker</span></span><br><span class="line">yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动Docker</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止Docker</span></span><br><span class="line">systemctl stop docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启</span></span><br><span class="line">systemctl restart docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置开机自启</span></span><br><span class="line">systemctl enable docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">执行docker ps命令，如果不报错，说明安装启动成功</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">配置镜像加速</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建目录</span></span><br><span class="line">mkdir -p /etc/docker</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">复制内容，注意把其中的镜像加速地址改成你自己的</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">例如https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors里获取的url</span></span><br><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;: [</span><br><span class="line">		&quot;https://aalfzix8.mirror.aliyuncs.com&quot;,</span><br><span class="line">        &quot;https://mirrors.tuna.tsinghua.edu.cn&quot;,</span><br><span class="line">        &quot;http://mirrors.sohu.com&quot;,</span><br><span class="line">        &quot;https://ustc-edu-cn.mirror.aliyuncs.com&quot;,</span><br><span class="line">        &quot;https://ccr.ccs.tencentyun.com&quot;,</span><br><span class="line">        &quot;https://docker.m.daocloud.io&quot;,</span><br><span class="line">        &quot;https://docker.awsl9527.cn&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重新加载配置</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启Docker</span></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" data-id="clzww2z1y00039gv1ayu86d0q" data-title="docker安装指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-关于后端开发的术语标准写法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T15:21:04.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/">关于后端开发的术语标准写法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th align="center">规范书写</th>
+<th align="center">不合适拼写举例</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">RESTful</td>
+<td align="center">Restful、RestFul</td>
+<td align="center">REST&#x3D;Representational State Transfer</td>
+</tr>
+<tr>
+<td align="center">Spring</td>
+<td align="center">spring</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Spring MVC</td>
+<td align="center">SpringMVC、Springmvc</td>
+<td align="center">Spring MVC中间有空格！</td>
+</tr>
+<tr>
+<td align="center">Spring Boot</td>
+<td align="center">Springboot、SpringBoot</td>
+<td align="center">Spring Boot中间有空格！</td>
+</tr>
+<tr>
+<td align="center">Spring Cloud</td>
+<td align="center">Springcloud、SpringCloud</td>
+<td align="center">Spring Cloud中间有空格！</td>
+</tr>
+<tr>
+<td align="center">OOP</td>
+<td align="center">oop</td>
+<td align="center">Object Oriented Programming</td>
+</tr>
+<tr>
+<td align="center">PO</td>
+<td align="center">po</td>
+<td align="center">Persistant Object</td>
+</tr>
+<tr>
+<td align="center">POJO</td>
+<td align="center">pojo</td>
+<td align="center">Plain Ordinary Java Object</td>
+</tr>
+<tr>
+<td align="center">Web</td>
+<td align="center">web、WEB</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Java</td>
+<td align="center">JAVA、java</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">JVM</td>
+<td align="center">jvm、Jvm</td>
+<td align="center">Java Virtual Machine</td>
+</tr>
+<tr>
+<td align="center">GC</td>
+<td align="center">gc</td>
+<td align="center">Garbage Collection</td>
+</tr>
+<tr>
+<td align="center">Java EE</td>
+<td align="center">java ee</td>
+<td align="center">Enterprise Edition</td>
+</tr>
+<tr>
+<td align="center">Java SE</td>
+<td align="center">java se</td>
+<td align="center">Standard Edition</td>
+</tr>
+<tr>
+<td align="center">Golang</td>
+<td align="center">golang</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Python</td>
+<td align="center">python</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Linux</td>
+<td align="center">linux</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Runtime</td>
+<td align="center">runtime</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">DNS</td>
+<td align="center">dns</td>
+<td align="center">Domain Name System 域名系统</td>
+</tr>
+<tr>
+<td align="center">DI</td>
+<td align="center">di</td>
+<td align="center">Dependency Injection 依赖注入</td>
+</tr>
+<tr>
+<td align="center">DB</td>
+<td align="center">db</td>
+<td align="center">DataBase</td>
+</tr>
+<tr>
+<td align="center">ACID</td>
+<td align="center">acid</td>
+<td align="center">Atomicity+Consistency+Isolation+Durability</td>
+</tr>
+<tr>
+<td align="center">DDL</td>
+<td align="center">ddl</td>
+<td align="center">Data Definition Language 数据定义语言</td>
+</tr>
+<tr>
+<td align="center">DML</td>
+<td align="center">dml</td>
+<td align="center">Data Manipulation Language 数据操纵语言</td>
+</tr>
+<tr>
+<td align="center">MySQL</td>
+<td align="center">mysql</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">SQLite</td>
+<td align="center">sqlite</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">SQLServer</td>
+<td align="center">sqlserver、SQLserver</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">NoSQL</td>
+<td align="center">nosql、NOSQL</td>
+<td align="center">NoSQL&#x3D;Not Only SQL</td>
+</tr>
+<tr>
+<td align="center">JDBC</td>
+<td align="center">Jdbc、jdbc</td>
+<td align="center">Java Database Connectivity</td>
+</tr>
+<tr>
+<td align="center">ORM</td>
+<td align="center">orm</td>
+<td align="center">Object&#x2F;Relational Mapping 对象&#x2F;关系映射</td>
+</tr>
+<tr>
+<td align="center">JPA</td>
+<td align="center">Jpa</td>
+<td align="center">Java Persistence API</td>
+</tr>
+<tr>
+<td align="center">MyBatis</td>
+<td align="center">mybatis、Mybatis</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">MyBatis-Plus</td>
+<td align="center">MyBatisPlus myBatis-plus</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Maven</td>
+<td align="center">maven、MAVEN</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Redis</td>
+<td align="center">redis</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">MongoDB</td>
+<td align="center">mongoDB</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">MQ</td>
+<td align="center">mq</td>
+<td align="center">Message Queue</td>
+</tr>
+<tr>
+<td align="center">RabbitMQ</td>
+<td align="center">rabbitMQ</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">RocketMQ</td>
+<td align="center">rocketMQ</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">ActiveMQ</td>
+<td align="center">activeMQ</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Netty</td>
+<td align="center">netty</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">gRPC</td>
+<td align="center">grpc</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Nginx</td>
+<td align="center">nginx、NGINX</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Dubbo</td>
+<td align="center">dubbo</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">JSON</td>
+<td align="center">Json</td>
+<td align="center">JavaScript Object Notation</td>
+</tr>
+<tr>
+<td align="center">JWT</td>
+<td align="center">jwt</td>
+<td align="center">JSON Web Token</td>
+</tr>
+<tr>
+<td align="center">XML</td>
+<td align="center">Xml</td>
+<td align="center">Extensible Markup Language</td>
+</tr>
+<tr>
+<td align="center">API</td>
+<td align="center">Api</td>
+<td align="center">Application Programming Interface</td>
+</tr>
+<tr>
+<td align="center">Jenkins</td>
+<td align="center">jk、jenkins</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Docker</td>
+<td align="center">docker</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">UML</td>
+<td align="center">Uml</td>
+<td align="center">Unified Modeling Language</td>
+</tr>
+<tr>
+<td align="center">SOA</td>
+<td align="center">Soa</td>
+<td align="center">Service Oriented Architecture</td>
+</tr>
+<tr>
+<td align="center">MVC</td>
+<td align="center">Mvc</td>
+<td align="center">Model–View–Controller</td>
+</tr>
+<tr>
+<td align="center">MVVM</td>
+<td align="center">Mvvm</td>
+<td align="center">Model-View-ViewModel</td>
+</tr>
+<tr>
+<td align="center">MVP</td>
+<td align="center">Mvp</td>
+<td align="center">Model-View-Presenter</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">规范书写</th>
+<th align="center">不合适拼写举例</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">SVN</td>
+<td align="center">svn</td>
+<td align="center">Subversion</td>
+</tr>
+<tr>
+<td align="center">Git</td>
+<td align="center">GIT、git</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">GitHub</td>
+<td align="center">github、Github</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Intellij IDEA</td>
+<td align="center">intellij idea、idea</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Eclipse</td>
+<td align="center">eclipse</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">MyEclipse</td>
+<td align="center">myeclipse</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Postman</td>
+<td align="center">postman</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/" data-id="clzww2z2600079gv179a5fa9j" data-title="关于后端开发的术语标准写法" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-学习过程中的一些知识点" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T10:57:06.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/">spring_boot碎碎念</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><p>DTO： 向服务端请求的数据对象，无所谓，写啥也可</p>
+<p>VO：向用户端发送到的数据对象</p>
+<p>jpa orm</p>
+<p>try-catch-finally里return放抛出异常前会导致抛不出</p>
+<h3 id="rebuild-project解决玄学报错"><a href="#rebuild-project解决玄学报错" class="headerlink" title="rebuild project解决玄学报错"></a>rebuild project解决玄学报错</h3><p>类似idea项目运行时出现错误：Error:Kotlin: Module was compiled with an incompatible version of Kotlin……</p>
+<p>在IDEA工具栏中点击Build，选择Rebuild Project</p>
+<h3 id="业务层开发-Service"><a href="#业务层开发-Service" class="headerlink" title="业务层开发(Service)"></a>业务层开发(Service)</h3><p> 数据层开发告一段落，下面进行业务层开发，其实标准业务层开发很多初学者认为就是调用数据层，怎么说呢？这个理解是没有大问题的，更精准的说法应该是组织业务逻辑功能，并根据业务需求，对数据持久层发起调用。有什么差别呢？目标是为了组织出符合需求的业务逻辑功能，至于调不调用数据层还真不好说，有需求就调用，没有需求就不调用。</p>
+<p> 一个常识性的知识普及一下，业务层(Service)的方法名定义一定要与业务有关，例如登录操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean <span class="title function_">login</span><span class="params">(String username,String password)</span>;</span><br></pre></td></tr></table></figure>
+
+
+<p> 而数据层(Mapper)的方法名定义一定与业务无关，是一定，不是可能，也不是有可能，例如根据用户名密码查询</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boolean <span class="title function_">selectByUserNameAndPassword</span><span class="params">(String username,String password)</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="控制层开发（Controller）"><a href="#控制层开发（Controller）" class="headerlink" title="控制层开发（Controller）"></a>控制层开发（Controller）</h3><h4 id="携带日期访问api"><a href="#携带日期访问api" class="headerlink" title="携带日期访问api"></a>携带日期访问api</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat(timezone = &quot;GMT+8&quot;, pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)</span> <span class="comment">// 返回前端的</span></span><br><span class="line"><span class="meta">@DateTimeFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)</span> <span class="comment">// 传到后端的</span></span><br><span class="line"><span class="comment">// 根据参数类型设置pattern，如果只有天数就写yyyy-MM-dd</span></span><br><span class="line"><span class="comment">// 携带的参数一般是Date、而返回的是LocalDate、LocalDateTime</span></span><br></pre></td></tr></table></figure>
+
+<p>（但转换错误）使用 java.time 包：这是 Java 8 引入的新 API，提供了更为现代和灵活的方式来处理日期和时间。例如，你可以使用 LocalDate、LocalDateTime 等类来处理日期和时间。</p>
+<h4 id="接口中的对象形参"><a href="#接口中的对象形参" class="headerlink" title="接口中的对象形参"></a>接口中的对象形参</h4><p>如果一个接口的请求参数包含对象，直接写对象字段，直接传 ?pageNum&#x3D;2&amp;pageSize&#x3D;3&amp;type&#x3D;计算机理论</p>
+<p>不建议这样写，一般都是封装一个SearchForm，分页信息也在里面</p>
+<p>单个基础数据类型参数，需要添加@RequestParam，将swagger的参数类型从body转为string</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/search&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Result&lt;List&lt;Book&gt;&gt; <span class="title function_">search</span><span class="params">(<span class="type">int</span> pageNum, <span class="type">int</span> pageSize, Book condition)</span> &#123;</span><br><span class="line">    System.out.println(pageNum);</span><br><span class="line">    System.out.println(pageSize);</span><br><span class="line">    System.out.println(condition);</span><br><span class="line">    List&lt;Book&gt; pageByCondition = bookService.getPageByCondition(pageNum, pageSize, condition);</span><br><span class="line">    <span class="keyword">return</span> Result.ok(pageByCondition);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="配置（Config）"><a href="#配置（Config）" class="headerlink" title="配置（Config）"></a>配置（Config）</h3><h4 id="自定义bean加载属性"><a href="#自定义bean加载属性" class="headerlink" title="自定义bean加载属性"></a>自定义bean加载属性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.library.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> nishuping</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2024/7/30</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 13:48</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;servers&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServerConfig</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String ip;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> port;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> timeout;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">servers.ip</span>=<span class="string">127.0.0.1</span></span><br><span class="line"><span class="attr">servers.port</span>=<span class="string">8080</span></span><br><span class="line"><span class="attr">servers.timeout</span>=<span class="string">3000</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">ServerConfig serverConfig;</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">testConfiguration</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.println(serverConfig);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ServerConfig(ip=127.0.0.1, port=8080, timeout=3000)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="第三方bean加载属性"><a href="#第三方bean加载属性" class="headerlink" title="第三方bean加载属性"></a>第三方bean加载属性</h4><h3 id="MybatisPlus"><a href="#MybatisPlus" class="headerlink" title="MybatisPlus"></a>MybatisPlus</h3><h4 id="MP分页、复杂查询"><a href="#MP分页、复杂查询" class="headerlink" title="MP分页、复杂查询"></a>MP分页、复杂查询</h4><p>分页配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.base.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.DbType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MpConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//配置分页插件</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 分页插件</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> MybatisPlusInterceptor <span class="title function_">optimisticLockerInnerInterceptor</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">MybatisPlusInterceptor</span> <span class="variable">interceptor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MybatisPlusInterceptor</span>();</span><br><span class="line">        <span class="comment">//向Mybatis过滤器链中添加分页拦截器</span></span><br><span class="line">        interceptor.addInnerInterceptor(<span class="keyword">new</span> <span class="title class_">PaginationInnerInterceptor</span>(DbType.MYSQL));</span><br><span class="line">        <span class="keyword">return</span> interceptor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="comment">#mapper配置文件</span></span><br><span class="line">  <span class="attr">mapper-locations:</span> <span class="string">classpath:mapper/*.xml</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.example.base.po</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="comment">#开启驼峰命名</span></span><br><span class="line">    <span class="attr">map-underscore-to-camel-case:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 开启日志</span></span><br><span class="line">    <span class="attr">log-impl:</span> <span class="string">org.apache.ibatis.logging.stdout.StdOutImpl</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>api接口直接返回IPage即可</p>
+<p>若是不分页或者其他操作，且只有一个包装类型，那么可以直接使用属性名（不需要类似user.id）</p>
+<p>模糊查询常用CONCAT(‘%’, #{name} ,’%’)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 根据消息表各字段查询</span></span><br><span class="line"><span class="comment">  *</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@param</span> foregroundChMessageSearchForm</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">IPage&lt;ForegroundChMessageVo&gt; <span class="title function_">selectByFormAndIds</span><span class="params">(Page&lt;ForegroundChMessageVo&gt; page, ForegroundChMessageSearchForm foregroundChMessageSearchForm, List&lt;String&gt; toUserIds)</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">&quot;base_column_list_vo&quot;</span>&gt;</span></span><br><span class="line">        CASE</span><br><span class="line">        WHEN CHM_IS_SEND = 0 THEN 0</span><br><span class="line">        WHEN CHM_IS_SEND = 1 THEN 1</span><br><span class="line">        ELSE NULL</span><br><span class="line">        END AS SHOW_SEND, CHM_ID, CHM_TITLE, CHM_CONTENT, CHM_TYPE, &#x27;系统用户&#x27; AS CHM_FROM_USER_NAME, TO_USER.CHU_NICK_NAME  AS CHM_TO_USER_NAME, CHM_IS_READ, CHM_IS_SEND, CHM_SEND_TIME, CHM.CREATE_TIME</span><br><span class="line">    <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;selectByFormAndIds&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.rdwl.faworkflow.modules.foregrounduser.vo.ForegroundChMessageVo&quot;</span>&gt;</span></span><br><span class="line">        SELECT</span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">&quot;base_column_list_vo&quot;</span>/&gt;</span></span><br><span class="line">        FROM ch_message CHM</span><br><span class="line">        LEFT JOIN ch_user TO_USER ON CHM.CHM_TO_USER_ID = TO_USER.CHU_ID</span><br><span class="line">        WHERE CHM.DEL_FLAG = 0</span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;toUserIds != null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CHM_TO_USER_ID IN</span><br><span class="line">            <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">item</span>=<span class="string">&quot;id&quot;</span> <span class="attr">collection</span>=<span class="string">&quot;toUserIds&quot;</span> <span class="attr">open</span>=<span class="string">&quot;(&quot;</span> <span class="attr">separator</span>=<span class="string">&quot;,&quot;</span> <span class="attr">close</span>=<span class="string">&quot;)&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;id != null and id != &#x27;&#x27;&quot;</span>&gt;</span></span><br><span class="line">                    #&#123;id&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.chmIsRead!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM_IS_READ = #&#123;foregroundChMessageSearchForm.chmIsRead&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.chmIsSend!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM_IS_SEND = #&#123;foregroundChMessageSearchForm.chmIsSend&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.startChmSendTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CHM_SEND_TIME &gt;= #&#123;foregroundChMessageSearchForm.startChmSendTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.endChmSendTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CHM_SEND_TIME <span class="symbol">&amp;lt;</span>= #&#123;foregroundChMessageSearchForm.endChmSendTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.startCreateTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CREATE_TIME &gt;= #&#123;foregroundChMessageSearchForm.startCreateTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">&quot;foregroundChMessageSearchForm.endCreateTime!=null&quot;</span>&gt;</span></span><br><span class="line">            AND CHM.CREATE_TIME <span class="symbol">&amp;lt;</span>= #&#123;foregroundChMessageSearchForm.endCreateTime&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="测试功能"><a href="#测试功能" class="headerlink" title="测试功能"></a>测试功能</h3><p>@Transactional在Test里会自动回滚</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BookServiceTest</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> IBookService bookService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetById</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(bookService.getById(<span class="number">4</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testSave</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Book</span> <span class="variable">book</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Book</span>();</span><br><span class="line">        book.setType(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        book.setName(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        book.setDescription(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        bookService.save(book);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testUpdate</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">Book</span> <span class="variable">book</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Book</span>();</span><br><span class="line">        book.setId(<span class="number">17</span>);</span><br><span class="line">        book.setType(<span class="string">&quot;-----------------&quot;</span>);</span><br><span class="line">        book.setName(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        book.setDescription(<span class="string">&quot;测试数据123&quot;</span>);</span><br><span class="line">        bookService.updateById(book);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testDelete</span><span class="params">()</span>&#123;</span><br><span class="line">        bookService.removeById(<span class="number">18</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetAll</span><span class="params">()</span>&#123;</span><br><span class="line">        bookService.list();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">testGetPage</span><span class="params">()</span>&#123;</span><br><span class="line">        IPage&lt;Book&gt; page = <span class="keyword">new</span> <span class="title class_">Page</span>&lt;Book&gt;(<span class="number">2</span>,<span class="number">5</span>);</span><br><span class="line">        bookService.page(page);</span><br><span class="line">        System.out.println(page.getCurrent());</span><br><span class="line">        System.out.println(page.getSize());</span><br><span class="line">        System.out.println(page.getTotal());</span><br><span class="line">        System.out.println(page.getPages());</span><br><span class="line">        System.out.println(page.getRecords());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Swagger常用注解"><a href="#Swagger常用注解" class="headerlink" title="Swagger常用注解"></a>Swagger常用注解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Api(tags = &quot;功能模块名称&quot;)</span> <span class="comment">// tags 不能省略</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BaseController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;api接口名称&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/test&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 返回日期类型成功格式化，包括日期和时间</span></span><br><span class="line">        <span class="keyword">return</span> LocalDateTime.now();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName(&quot;tbl_book&quot;)</span></span><br><span class="line"><span class="meta">@ApiModel(&quot;Book对象&quot;)</span>  <span class="comment">// 作用不清楚，写就完了，增加代码可读性</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Book</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableId(value = &quot;id&quot;, type = IdType.AUTO)</span></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;id&quot;)</span> <span class="comment">// 备注字段的意义，调试时的提示</span></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;类型&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String type;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;书名&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;描述&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String description;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="依赖包相关"><a href="#依赖包相关" class="headerlink" title="依赖包相关"></a>依赖包相关</h3><p> 朦朦胧胧中感觉starter与parent好像都是帮助我们简化配置的，但是功能又不一样，梳理一下。</p>
+<p> starter是一个坐标中定了若干个坐标，以前写多个的，现在写一个，是用来减少依赖配置的书写量的。</p>
+<p> parent是定义了几百个依赖版本号，以前写依赖需要自己手工控制版本，现在由SpringBoot统一管理，这样就不存在版本冲突了，是用来减少依赖冲突的。</p>
+<p>实际开发应用方式</p>
+<p>实际开发中如果需要用什么技术，先去找有没有这个技术对应的starter</p>
+<p>如果有对应的starter，直接写starter，而且无需指定版本，版本由parent提供<br>如果没有对应的starter，手写坐标即可<br>实际开发中如果发现坐标出现了冲突现象，确认你要使用的可行的版本号，使用手工书写的方式添加对应依赖，覆盖SpringBoot提供给我们的配置管理</p>
+<p>方式一：直接写坐标<br>方式二：覆盖中定义的版本号，就是下面这堆东西了，哪个冲突了覆盖哪个就OK了</p>
+<p>ps: 命名规则：spring-boot-starter-技术名称</p>
+<h3 id="properties文件"><a href="#properties文件" class="headerlink" title="properties文件"></a>properties文件</h3><p>SIT(System Integrate Test)：系统整合测试</p>
+<p>UAT(User Acceptance Test)：用户验收测试</p>
+<p>PROD(Production)：生产 &#x2F; 正式</p>
+<p>DEV(Development)：开发</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用application-dev.properties</span></span><br><span class="line"><span class="attr">spring.profiles.active</span>=<span class="string">dev</span></span><br><span class="line"><span class="comment"># 提取重复的前缀</span></span><br><span class="line"><span class="attr">baseDir</span>=<span class="string">localhost:8080</span></span><br><span class="line"><span class="comment"># 使用上述前缀</span></span><br><span class="line"><span class="attr">book.name</span>=<span class="string">$&#123;baseDir&#125;/name</span></span><br><span class="line"><span class="comment"># 使用转义字符 </span></span><br><span class="line"><span class="attr">book.description</span>=<span class="string">小红帽\t黑</span></span><br><span class="line"><span class="attr">book.price</span>=<span class="string">110</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Linux相关操作"><a href="#Linux相关操作" class="headerlink" title="Linux相关操作"></a>Linux相关操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询端口</span></span><br><span class="line">netstat -ano</span><br><span class="line"><span class="comment"># 查询指定端口</span></span><br><span class="line">netstat -ano |findstr <span class="string">&quot;端口号&quot;</span></span><br><span class="line"><span class="comment"># 根据进程PID查询进程名称</span></span><br><span class="line">tasklist |findstr <span class="string">&quot;进程PID号&quot;</span></span><br><span class="line"><span class="comment"># 根据PID杀死任务</span></span><br><span class="line">taskkill /F /PID <span class="string">&quot;进程PID号&quot;</span></span><br><span class="line"><span class="comment"># 根据进程名称杀死任务</span></span><br><span class="line">taskkill -f -t -im <span class="string">&quot;进程名称&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 按指定端口运行Java项目，server.port就是application.properties里的字段	</span></span><br><span class="line">java –jar springboot.jar –-server.port=80</span><br><span class="line"><span class="comment"># 如果你修改的属性不止一个，可以按照上述格式继续写，属性与属性之间使用空格分隔。</span></span><br><span class="line">java –jar springboot.jar –-server.port=80 --logging.level.root=debug</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="日志（回写省内存）"><a href="#日志（回写省内存）" class="headerlink" title="日志（回写省内存）"></a>日志（回写省内存）</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">	<span class="attr">logback:</span></span><br><span class="line">    	<span class="attr">rollingpolicy:</span></span><br><span class="line">        	<span class="attr">max-file-size:</span> <span class="string">3KB</span></span><br><span class="line">            <span class="attr">file-name-pattern:</span> <span class="string">server.%d&#123;yyyy-MM-dd&#125;.%i.log</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h3><h4 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h4><p>Eureka：注册服务</p>
+<p>Ribbon：负载均衡、轮询</p>
+<p>Feign：动态代理、拼接url请求</p>
+<p>Hystrix：请求 线程池、避免服务雪崩</p>
+<p>Zuul：路由、网关</p>
+<h3 id="Node设置镜像"><a href="#Node设置镜像" class="headerlink" title="Node设置镜像"></a>Node设置镜像</h3><p>npm config set registry <a target="_blank" rel="noopener" href="http://registry.npmmirror.com/">http://registry.npmmirror.com</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" data-id="clzww2z2600089gv1113l005b" data-title="spring_boot碎碎念" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hexo一键部署指南" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/hexo%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/" class="article-date">
+  <time class="dt-published" datetime="2024-08-15T17:08:18.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/hexo%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">hexo一键部署指南</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="初始化Hexo项目"><a href="#初始化Hexo项目" class="headerlink" title="初始化Hexo项目"></a>初始化Hexo项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Hexo</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">John</span> <span class="string">Doe</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://用户名.github.io/项目名</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line">  <span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;.html&#x27; from permalinks</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line">  <span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">syntax_highlighter:</span> <span class="string">highlight.js</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = &#x27;&#x27;)</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-date</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Metadata elements</span></span><br><span class="line"><span class="comment">## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</span></span><br><span class="line"><span class="attr">meta_generator:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"><span class="comment">## updated_option supports &#x27;mtime&#x27;, &#x27;date&#x27;, &#x27;empty&#x27;</span></span><br><span class="line"><span class="attr">updated_option:</span> <span class="string">&#x27;mtime&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Include / Exclude file(s)</span></span><br><span class="line"><span class="comment">## include:/exclude: options only apply to the &#x27;source/&#x27; folder</span></span><br><span class="line"><span class="attr">include:</span></span><br><span class="line"><span class="attr">exclude:</span></span><br><span class="line"><span class="attr">ignore:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="comment"># ParticleX landscape</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">landscape</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">仓库上传链接</span></span><br><span class="line">  <span class="comment"># example, https://github.com/hexojs/hexojs.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">GitHub生成的token，头像、setting里生成的，后续要添加到仓库设置才会自动action</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="添加文章"><a href="#添加文章" class="headerlink" title="添加文章"></a>添加文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 文章名称</span><br></pre></td></tr></table></figure>
+
+<p>本质在source\_posts目录下的MarkDown文件</p>
+<h3 id="部署Hexo项目"><a href="#部署Hexo项目" class="headerlink" title="部署Hexo项目"></a>部署Hexo项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>Github仓库设置默认分支为<code>_config.yml</code>配置中的分支名称。 稍等片刻，您的站点就会显示在您的Github Pages中</p>
+<h3 id="重新部署"><a href="#重新部署" class="headerlink" title="重新部署"></a>重新部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/hexo%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/" data-id="clzww2z2100059gv1cthvg2lm" data-title="hexo一键部署指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python快速入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="article-date">
+  <time class="dt-published" datetime="2024-08-15T17:01:36.000Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">python快速入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="小tips"><a href="#小tips" class="headerlink" title="小tips"></a>小tips</h3><p>类型可以用于比较，如type(‘123’)&#x3D;&#x3D;str</p>
+<p>list[] tuple() ?dict{‘key’:’val’} function range<br>列表 元组 字典<br>str float int bool</p>
+<p>eval、int、float(str)  为数字类型的str转换类型  eval根据str自动分配int或者float<br>eval(‘1’)=&#x3D;1  eval(‘1+1’)=&#x3D;2</p>
+<h1 id="del-删除元素"><a href="#del-删除元素" class="headerlink" title="del 删除元素"></a>del 删除元素</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list、dict</span></span><br><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="keyword">del</span> <span class="built_in">list</span>[<span class="number">0</span>] <span class="comment"># 删除0位置的元素</span></span><br><span class="line"><span class="comment"># 字典同理</span></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">0</span>: <span class="number">1</span>, <span class="number">1</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">del</span> <span class="built_in">dict</span>[<span class="number">1</span>] </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dict</span>) <span class="comment"># &#123;0:1&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="常见的bool条件-i-in-type"><a href="#常见的bool条件-i-in-type" class="headerlink" title="常见的bool条件 i in type"></a>常见的bool条件 i in type</h1><p>list、tuple、dict（key）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span> ,<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span> <span class="keyword">in</span> <span class="built_in">list</span>) <span class="comment"># True</span></span><br><span class="line"><span class="built_in">tuple</span>=(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">2</span> <span class="keyword">in</span> <span class="built_in">tuple</span>) <span class="comment"># True</span></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">0</span>: <span class="number">1</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="number">0</span> <span class="keyword">in</span> <span class="built_in">dict</span>) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span> <span class="keyword">in</span> <span class="built_in">dict</span>)<span class="comment"># False</span></span><br></pre></td></tr></table></figure>
+<h1 id="print-function"><a href="#print-function" class="headerlink" title="print(function)"></a>print(function)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># print(values,sep,end,file,flush)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">print</span>)) <span class="comment"># builtin_function_or_method</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,sep=<span class="string">&#x27;-&#x27;</span>,end=<span class="string">&#x27;end&#x27;</span>) <span class="comment"># 1-2-3end sep分隔符</span></span><br><span class="line"><span class="comment"># file flush 暂时不看</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="cast"><a href="#cast" class="headerlink" title="cast"></a>cast</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>()</span><br><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>
+
+<h1 id="list（array）"><a href="#list（array）" class="headerlink" title="list（array）"></a>list（array）</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = []</span><br><span class="line"><span class="built_in">list</span>.sort()  <span class="comment"># arg: key(function), reverse(bool) key就是cmp</span></span><br><span class="line"><span class="comment"># key=cmp cmp只能由一个形参，当前位置的元素list[i]</span></span><br><span class="line"><span class="comment"># 下列单独运行，上面忽略掉</span></span><br><span class="line"><span class="built_in">list</span> = [[<span class="string">&#x27;狗&#x27;</span>,<span class="string">&#x27;12&#x27;</span>],[<span class="string">&#x27;猫&#x27;</span>,<span class="string">&#x27;2&#x27;</span>]]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cmp</span>(<span class="params"><span class="built_in">list</span></span>):</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">list</span>[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">list</span>.sort(key=cmp) <span class="comment"># sort 若无参数则默认取第一个元素（list[0][0]）根据字典序升序</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="for"><a href="#for" class="headerlink" title="for"></a>for</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">2</span>) <span class="comment"># 左闭右开 type(a) == range</span></span><br><span class="line"><span class="built_in">print</span>(a == <span class="built_in">range</span>) <span class="comment"># True</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>): <span class="comment"># 1 2 3 4 5 6 7 8 9 10 </span></span><br><span class="line">	<span class="built_in">print</span>(i,end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">0</span>: <span class="number">1</span>, <span class="number">1</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">del</span> <span class="built_in">dict</span>[<span class="number">1</span>] </span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dict</span>) <span class="comment"># &#123;0:1&#125;</span></span><br><span class="line"><span class="keyword">for</span> key,val <span class="keyword">in</span> <span class="built_in">dict</span>.items():</span><br><span class="line">	<span class="built_in">print</span>(key,val,sep=<span class="string">&#x27;:&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add = <span class="keyword">lambda</span> a, b: a + b  </span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">1</span>, <span class="number">5</span>)) <span class="comment"># 6</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># swap 便捷写法</span></span><br><span class="line">a=<span class="number">1</span>  </span><br><span class="line">b=<span class="number">2</span>  </span><br><span class="line">a,b=b,a  </span><br><span class="line"><span class="built_in">print</span>(a,b) <span class="comment"># 2,1</span></span><br></pre></td></tr></table></figure>
+<p>在 Python 中有时候会看到一个 def 函数:</p>
+<p>def sample(n_samples):<br>    pass</p>
+<p>该处的 pass 便是占据一个位置，因为如果定义一个空函数程序会报错，当你没有想好函数的内容是可以用 pass 填充，使程序可以正常运行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" data-id="clzww2z2100069gv1ghuf8ry8" data-title="python快速入门" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/16/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-08-15T16:47:20.901Z" itemprop="datePublished">2024-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2024/08/16/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/16/hello-world/" data-id="clzww2z1z00049gv1erur7y4a" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/08/">八月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/">IntelliJ_IDEA的使用</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/">Git实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">SQL连接查询</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">docker安装指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/">关于后端开发的术语标准写法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
