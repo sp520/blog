@@ -14,8 +14,9 @@
 <meta property="og:description" content="连接查询12select * from a left join b;# 以左边（a）为主表    left join：以左表为主表，左表所有记录都会查询出来，若条件不符合，则拼接在右边的字段值为NULL 12-- 左表全部显示、没有符合条件的拼接在右的记录时显示NULLselect chu_id, chm_title from ch_user left join ch_message on chu">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-16T15:21:34.000Z">
-<meta property="article:modified_time" content="2024-08-16T15:29:51.201Z">
+<meta property="article:modified_time" content="2024-08-16T16:28:49.745Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
@@ -77,6 +78,10 @@
   <time class="dt-published" datetime="2024-08-16T15:21:34.000Z" itemprop="datePublished">2024-08-16</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E6%8C%87%E5%8D%97/">指南</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -117,10 +122,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sp520.github.io/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" data-id="clzwwylw80004f0v14m624ooj" data-title="SQL连接查询" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://sp520.github.io/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/" data-id="clzwy052u0005ykv1af95gr3x" data-title="SQL连接查询" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/MySQL/" rel="tag">MySQL</a></li></ul>
+
     </footer>
   </div>
   
@@ -139,7 +146,7 @@
   
     <a href="/blog/2024/08/16/Docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">docker安装指南</div>
+      <div class="article-nav-title">Docker安装指南</div>
     </a>
   
 </nav>
@@ -153,12 +160,33 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%8C%87%E5%8D%97/">指南</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/blog/tags/Git/" style="font-size: 10px;">Git</a> <a href="/blog/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/blog/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/blog/tags/Python/" style="font-size: 10px;">Python</a> <a href="/blog/tags/Spring-Boot/" style="font-size: 10px;">Spring Boot</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 10px;">规范</a> <a href="/blog/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 10px;">软件</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -189,11 +217,23 @@
           </li>
         
           <li>
-            <a href="/blog/2024/08/16/Docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">docker安装指南</a>
+            <a href="/blog/2024/08/16/Docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">Docker安装指南</a>
           </li>
         
           <li>
             <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/">关于后端开发的术语标准写法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Spring%20Boot%E7%A2%8E%E7%A2%8E%E5%BF%B5/">Spring Boot碎碎念</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/hexo%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">Hexo一键部署指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">python快速入门</a>
           </li>
         
       </ul>
