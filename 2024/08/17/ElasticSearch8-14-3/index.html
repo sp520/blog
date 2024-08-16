@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ElasticSearch8.14.3 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="简介 索引对应MySQL表 文档（json格式）对应MySQL行 字段（Field，json中的字段）对应MySQL列 映射（Mapping）对应MySQL约束（Schema） 索引是有默认主键id的，不需要额外设置 analyzer是查询时用的分词器（对记录分词），search_analyzer是搜索时用的分词器（对搜索关键字分词） 表面工作流程：创建表，插入数据，根据词组查询到数据； 实际工作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch8.14.3">
+<meta property="og:url" content="https://sp520.github.io/blog/2024/08/17/ElasticSearch8-14-3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简介 索引对应MySQL表 文档（json格式）对应MySQL行 字段（Field，json中的字段）对应MySQL列 映射（Mapping）对应MySQL约束（Schema） 索引是有默认主键id的，不需要额外设置 analyzer是查询时用的分词器（对记录分词），search_analyzer是搜索时用的分词器（对搜索关键字分词） 表面工作流程：创建表，插入数据，根据词组查询到数据； 实际工作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\Desktop\es%E7%AC%94%E8%AE%B0\assets\image-20240814100919432.png">
+<meta property="article:published_time" content="2024-08-16T17:50:09.000Z">
+<meta property="article:modified_time" content="2024-08-16T17:50:45.397Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="ElasticSearch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\Desktop\es%E7%AC%94%E8%AE%B0\assets\image-20240814100919432.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sp520.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ElasticSearch8-14-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2024/08/17/ElasticSearch8-14-3/" class="article-date">
+  <time class="dt-published" datetime="2024-08-16T17:50:09.000Z" itemprop="datePublished">2024-08-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E6%8C%87%E5%8D%97/">指南</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ElasticSearch8.14.3
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ol>
+<li>索引对应MySQL表</li>
+<li>文档（json格式）对应MySQL行</li>
+<li>字段（Field，json中的字段）对应MySQL列</li>
+<li>映射（Mapping）对应MySQL约束（Schema）</li>
+<li>索引是有默认主键id的，不需要额外设置</li>
+<li>analyzer是查询时用的分词器（对记录分词），search_analyzer是搜索时用的分词器（对搜索关键字分词）</li>
+<li>表面工作流程：创建表，插入数据，根据词组查询到数据；</li>
+<li>实际工作流程：插入数据时进行分词，根据词条创建索引；查询时根据词条查询到文档ids之后再到文档里取出数据</li>
+<li>搜索：根据词组寻找id</li>
+<li>查询：根据id查询文档</li>
+</ol>
+<h3 id="安装-Windows版本"><a href="#安装-Windows版本" class="headerlink" title="安装 Windows版本"></a>安装 Windows版本</h3><h4 id="ik分词器"><a href="#ik分词器" class="headerlink" title="ik分词器"></a>ik分词器</h4><ol>
+<li>k_smart：智能切分，粗粒度</li>
+<li>ik_max_word：最细切分，细粒度</li>
+</ol>
+<p>解压后放到es的plugins文件夹下，启动后查看日志，有loaded plugin [ik-analysis]字样即可</p>
+<p><img src="D:\Desktop\es笔记\assets\image-20240814100919432.png" alt="image-20240814100919432"></p>
+<p>分词器普遍存在的不足：<br>1、不会随着时代潮流更新<br>2、会分无意义的词（是、的、和、它、了  等一系列）<br>所以需要自定义！</p>
+<h3 id="安装Linux版本"><a href="#安装Linux版本" class="headerlink" title="安装Linux版本"></a>安装Linux版本</h3><p>——黑马文档，你值得拥有</p>
+<p><a target="_blank" rel="noopener" href="https://b11et3un53m.feishu.cn/wiki/LDLew5xnDiDv7Qk2uPwcoeNpngf">‍⁠﻿‬‌‍‍﻿‍⁠‍‌⁠‍⁠‬﻿﻿‍‌‌day08-Elasticsearch - 飞书云文档 (feishu.cn)</a></p>
+<h4 id="elasticsearch安装"><a href="#elasticsearch安装" class="headerlink" title="elasticsearch安装"></a>elasticsearch安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建es网络</span></span><br><span class="line">docker network create es-net</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">导入数据 需要在上面链接下载安装包</span></span><br><span class="line">docker load -i es.tar</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署单点es</span></span><br><span class="line">docker run -d \</span><br><span class="line">	--name es \</span><br><span class="line">    -e &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot; \</span><br><span class="line">    -e &quot;discovery.type=single-node&quot; \</span><br><span class="line">    -v es-data:/usr/share/elasticsearch/data \</span><br><span class="line">    -v es-plugins:/usr/share/elasticsearch/plugins \</span><br><span class="line">    --privileged \</span><br><span class="line">    --network es-net \</span><br><span class="line">    -p 9200:9200 \</span><br><span class="line">    -p 9300:9300 \</span><br><span class="line">elasticsearch:7.12.1</span><br></pre></td></tr></table></figure>
+
+<p>访问：<a target="_blank" rel="noopener" href="http://192.168.177.130:9200/">192.168.177.130:9200</a></p>
+<h4 id="kibana安装"><a href="#kibana安装" class="headerlink" title="kibana安装"></a>kibana安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">导入数据</span></span><br><span class="line">docker load -i es.tar</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">部署kibana</span></span><br><span class="line">docker run -d \</span><br><span class="line">--name kibana \</span><br><span class="line">-e ELASTICSEARCH_HOSTS=http://es:9200 \</span><br><span class="line">--network=es-net \</span><br><span class="line">-p 5601:5601  \</span><br><span class="line">kibana:7.12.1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看运行日志</span></span><br><span class="line">docker logs -f kibana</span><br></pre></td></tr></table></figure>
+
+<p>访问：<a target="_blank" rel="noopener" href="http://192.168.177.130:5601/">192.168.177.130:5601</a></p>
+<h4 id="docker操作"><a href="#docker操作" class="headerlink" title="docker操作"></a>docker操作</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动 docker 服务</span></span><br><span class="line">systemctl start docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看 docker 运行中的容器</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动 docker 容器 (start restart stop)</span></span><br><span class="line">docker start es</span><br><span class="line">docker start kibana</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="es-token"><a href="#es-token" class="headerlink" title="es token"></a>es token</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin\elasticsearch-create-enrollment-token.bat --scope kibana</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="es-账号密码"><a href="#es-账号密码" class="headerlink" title="es 账号密码"></a>es 账号密码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/elasticsearch-reset-password -u elastic</span><br></pre></td></tr></table></figure>
+
+<h4 id="访问kibana"><a href="#访问kibana" class="headerlink" title="访问kibana"></a>访问kibana</h4><p>——用于操作es</p>
+<p><a target="_blank" rel="noopener" href="http://localhost:5601/">http://localhost:5601</a></p>
+<h4 id="访问elastic"><a href="#访问elastic" class="headerlink" title="访问elastic"></a>访问elastic</h4><p>——注意是https！</p>
+<p><a target="_blank" rel="noopener" href="https://localhost:9200/">https://localhost:9200</a></p>
+<h4 id="获取api-key"><a href="#获取api-key" class="headerlink" title="获取api-key"></a>获取api-key</h4><p>——暂时不需要用到，本文连接es采用SSL+账号密码方式</p>
+<p>kibana——stack_managerment——security——api-key</p>
+<h3 id="kibana基础操作"><a href="#kibana基础操作" class="headerlink" title="kibana基础操作"></a>kibana基础操作</h3><p>找到dev-tools</p>
+<h4 id="新建索引"><a href="#新建索引" class="headerlink" title="新建索引"></a>新建索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 创建索引时自定义分词器</span><br><span class="line">PUT articles1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;properties&quot;: &#123;</span><br><span class="line">      &quot;content&quot;: &#123;</span><br><span class="line">        &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">        &quot;analyzer&quot;: &quot;ik_smart&quot;,</span><br><span class="line">        &quot;search_analyzer&quot;: &quot;keyword&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;title&quot;: &#123;</span><br><span class="line">        &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="新建文档"><a href="#新建文档" class="headerlink" title="新建文档"></a>新建文档</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 新增文档，若books索引不存在会自动创建</span><br><span class="line">POST books/_doc</span><br><span class="line">&#123;&quot;name&quot;: &quot;Snow Crash&quot;, &quot;author&quot;: &quot;Neal Stephenson&quot;, &quot;release_date&quot;: &quot;1992-06-01&quot;, &quot;page_count&quot;: 470&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="批量新增文档"><a href="#批量新增文档" class="headerlink" title="批量新增文档"></a>批量新增文档</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">POST /_bulk  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search intro&quot;,&quot;content&quot;:&quot;Elasticsearch是一个基于Lucene的搜索和分析引擎。它提供了一个分布式多用户能力的全文搜索引擎，具有HTTP web接口和无模式JSON文档。Elasticsearch是用Java开发的，并作为Apache许可条款下的开放源码发布。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search use cases&quot;,&quot;content&quot;:&quot;Elasticsearch的应用场景广泛，包括日志和交易数据的实时分析、全文搜索、安全分析、业务分析以及运营智能等。它的分布式特性使其能够处理PB级的数据，并提供实时搜索和分析的能力。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search architecture&quot;,&quot;content&quot;:&quot;Elasticsearch的架构包括节点、索引、分片和副本。节点是Elasticsearch的单个实例，索引是存储相关数据的地方，分片是索引的分割，而副本是分片的拷贝。这种分布式架构提供了高可用性和扩展性。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search indexing&quot;,&quot;content&quot;:&quot;在Elasticsearch中，索引是存储和检索数据的主要机制。数据以JSON文档的形式存储，并通过索引进行优化以便快速搜索。每个索引都可以有多个分片，以提高性能和可伸缩性。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search querying&quot;,&quot;content&quot;:&quot;Elasticsearch提供了强大的查询语言，允许用户执行复杂的搜索操作。查询可以针对单个字段或多个字段，并支持各种查询类型，如匹配查询、范围查询和布尔查询等。这使得Elasticsearch非常适合处理复杂的搜索需求。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search aggregations&quot;,&quot;content&quot;:&quot;Elasticsearch的聚合功能允许用户对数据进行复杂的分析和统计。聚合操作可以对数据进行分组、计算平均值、最大值、最小值等，并生成各种统计图表。这使得Elasticsearch成为业务分析和数据可视化的强大工具。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search scaling&quot;,&quot;content&quot;:&quot;Elasticsearch的设计考虑了水平扩展性。通过增加更多的节点，可以轻松地扩展Elasticsearch集群的处理能力和存储容量。这使得Elasticsearch能够应对不断增长的数据量和查询需求。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search resilience&quot;,&quot;content&quot;:&quot;Elasticsearch具有高度的容错能力。通过副本机制，数据可以在多个节点之间进行复制，以防止数据丢失。即使部分节点发生故障，Elasticsearch也能保证数据的可用性和查询的一致性。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search security&quot;,&quot;content&quot;:&quot;Elasticsearch提供了丰富的安全特性，包括基于角色的访问控制、SSL/TLS加密通信、审计日志等。这些特性确保了Elasticsearch集群和数据的安全性，防止未经授权的访问和数据泄露。&quot;&#125;  </span><br><span class="line">&#123;&quot;index&quot;: &#123;&quot;_index&quot;: &quot;articles&quot;&#125;&#125;  </span><br><span class="line">&#123;&quot;title&quot;: &quot;elastic search monitoring&quot;,&quot;content&quot;:&quot;Elasticsearch提供了强大的监控工具，允许用户实时跟踪集群的状态和性能。监控工具可以提供关于节点健康、索引性能、查询响应时间等方面的详细信息，帮助用户优化Elasticsearch集群的配置和性能。&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询索引（match）"><a href="#查询索引（match）" class="headerlink" title="查询索引（match）"></a>查询索引（match）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 查询索引</span><br><span class="line">GET books/_search</span><br><span class="line"></span><br><span class="line"># 条件查询索引</span><br><span class="line">GET books/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;match&quot;: &#123;</span><br><span class="line">      &quot;name&quot;: &quot;brave&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询索引配置"><a href="#查询索引配置" class="headerlink" title="查询索引配置"></a>查询索引配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET articles1/_mapping</span><br></pre></td></tr></table></figure>
+
+<h4 id="备份索引（拷贝）"><a href="#备份索引（拷贝）" class="headerlink" title="备份索引（拷贝）"></a>备份索引（拷贝）</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 备份</span><br><span class="line">POST _reindex</span><br><span class="line">&#123;</span><br><span class="line">  &quot;source&quot; : &#123;</span><br><span class="line">    &quot;index&quot;: &quot;articles&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dest&quot;: &#123;</span><br><span class="line">    &quot;index&quot;: &quot;articles1&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看分词器效果"><a href="#查看分词器效果" class="headerlink" title="查看分词器效果"></a>查看分词器效果</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET /_analyze  </span><br><span class="line">&#123;  </span><br><span class="line">  &quot;analyzer&quot;: &quot;ik_smart&quot;,  // 可以替换为您的search_analyzer名称，如ik_smart  </span><br><span class="line">  &quot;text&quot;: &quot;Elasticsearch是一个基于Lucene的搜索和分析引擎。它提供了一个分布式多用户能力的全文搜索引擎，具有HTTP web接口和无模式JSON文档。Elasticsearch是用Java开发的，并作为Apache许可条款下的开放源码发布。&quot;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="elastic-java案例"><a href="#elastic-java案例" class="headerlink" title="elastic-java案例"></a>elastic-java案例</h3><p>——此依赖包教程极少（没见过），官方文档也不详细，不建议学习（CV操作即可），推荐High Level Client</p>
+<h4 id="依赖坐标"><a href="#依赖坐标" class="headerlink" title="依赖坐标"></a>依赖坐标</h4><p>——按官方文档整了半天，最后在Github Issues里找到了缺失的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>co.elastic.clients<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>elasticsearch-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.15.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.17.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.elasticsearch.client<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>elasticsearch-rest-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.6.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!-- Needed only if you use the spring-boot Maven plugin --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>jakarta.json<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jakarta.json-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="封装ElasticSearchUtils"><a href="#封装ElasticSearchUtils" class="headerlink" title="封装ElasticSearchUtils"></a>封装ElasticSearchUtils</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.ElasticsearchClient;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.json.jackson.JacksonJsonpMapper;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.transport.ElasticsearchTransport;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.transport.TransportUtils;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.transport.rest_client.RestClientTransport;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.HttpHost;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.auth.AuthScope;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.auth.UsernamePasswordCredentials;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.impl.client.BasicCredentialsProvider;</span><br><span class="line"><span class="keyword">import</span> org.elasticsearch.client.RestClient;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.SSLContext;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> nishuping</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2024/8/14</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 16:29</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ElasticSearchUtils</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ElasticsearchTransport transport;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">certPath</span> <span class="operator">=</span> <span class="string">&quot;D:\\Desktop\\es-win\\elasticsearch-8.14.3\\config\\certs\\http_ca.crt&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">login</span> <span class="operator">=</span> <span class="string">&quot;elastic&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;=_CuXWvNBeer1DGkwux=&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">host</span> <span class="operator">=</span> <span class="string">&quot;localhost&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="variable">port</span> <span class="operator">=</span> <span class="number">9200</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取连接</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ElasticsearchClient <span class="title function_">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">certFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(certPath);</span><br><span class="line"></span><br><span class="line">        <span class="type">SSLContext</span> <span class="variable">sslContext</span> <span class="operator">=</span> TransportUtils</span><br><span class="line">                .sslContextFromHttpCaCrt(certFile);</span><br><span class="line"></span><br><span class="line">        <span class="type">BasicCredentialsProvider</span> <span class="variable">credsProv</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BasicCredentialsProvider</span>();</span><br><span class="line"></span><br><span class="line">        credsProv.setCredentials(</span><br><span class="line">                AuthScope.ANY, <span class="keyword">new</span> <span class="title class_">UsernamePasswordCredentials</span>(login, password)</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="type">RestClient</span> <span class="variable">restClient</span> <span class="operator">=</span> RestClient</span><br><span class="line">                .builder(<span class="keyword">new</span> <span class="title class_">HttpHost</span>(host, port, <span class="string">&quot;https&quot;</span>))</span><br><span class="line">                .setHttpClientConfigCallback(hc -&gt; hc</span><br><span class="line">                        .setSSLContext(sslContext)</span><br><span class="line">                        .setDefaultCredentialsProvider(credsProv)</span><br><span class="line">                )</span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create the transport and the API client</span></span><br><span class="line">        transport = <span class="keyword">new</span> <span class="title class_">RestClientTransport</span>(restClient, <span class="keyword">new</span> <span class="title class_">JacksonJsonpMapper</span>());</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ElasticsearchClient</span>(transport);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 关闭连接</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">closeConnection</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            transport.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="ConnectionDemo——CRUD"><a href="#ConnectionDemo——CRUD" class="headerlink" title="ConnectionDemo——CRUD"></a>ConnectionDemo——CRUD</h4><p>——所有操作都用try-catch，保证异常发生后能关闭连接（这里偷懒没写）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.ElasticsearchClient;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.core.BulkResponse;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.core.BulkRequest;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.core.SearchResponse;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.core.bulk.BulkResponseItem;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.core.search.Hit;</span><br><span class="line"><span class="keyword">import</span> co.elastic.clients.elasticsearch.core.search.TotalHits;</span><br><span class="line"><span class="keyword">import</span> com.example.demo.entity.Article;</span><br><span class="line"><span class="keyword">import</span> com.example.demo.utils.ElasticSearchUtils;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> nishuping</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2024/8/13</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@time</span> 14:49</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConnectTest</span> &#123;</span><br><span class="line">    <span class="comment">//    @Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Article&gt; <span class="title function_">search</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">ElasticsearchClient</span> <span class="variable">esClient</span> <span class="operator">=</span> ElasticSearchUtils.getConnection();</span><br><span class="line">        <span class="type">String</span> <span class="variable">searchText</span> <span class="operator">=</span> <span class="string">&quot;具有&quot;</span>;</span><br><span class="line"></span><br><span class="line">        SearchResponse&lt;Article&gt; response = esClient.search(s -&gt; s</span><br><span class="line">                        .index(<span class="string">&quot;articles1&quot;</span>)</span><br><span class="line">                        .query(q -&gt; q</span><br><span class="line">                                .match(t -&gt; t</span><br><span class="line">                                        .field(<span class="string">&quot;content&quot;</span>)</span><br><span class="line">                                        .query(searchText)</span><br><span class="line">                                )</span><br><span class="line">                        ),</span><br><span class="line">                Article.class</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="type">TotalHits</span> <span class="variable">total</span> <span class="operator">=</span> response.hits().total();</span><br><span class="line"></span><br><span class="line">        System.err.println(<span class="string">&quot;==========================================&quot;</span>);</span><br><span class="line">        System.out.println(total.value());</span><br><span class="line">        System.out.println(total);</span><br><span class="line"></span><br><span class="line">        List&lt;Hit&lt;Article&gt;&gt; hits = response.hits().hits();</span><br><span class="line">        List&lt;Article&gt; articles = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Article&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Hit&lt;Article&gt; hit : hits) &#123;</span><br><span class="line">            <span class="type">Article</span> <span class="variable">article</span> <span class="operator">=</span> hit.source();</span><br><span class="line">            <span class="comment">// 设置 id</span></span><br><span class="line">            article.setId(hit.id());</span><br><span class="line">            articles.add(article);</span><br><span class="line">            System.out.println(<span class="string">&quot;Found Article &quot;</span> + article);</span><br><span class="line">        &#125;</span><br><span class="line">        ElasticSearchUtils.closeConnection();</span><br><span class="line">        <span class="keyword">return</span> articles;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">insertOrUpdate</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">ElasticsearchClient</span> <span class="variable">esClient</span> <span class="operator">=</span> ElasticSearchUtils.getConnection();</span><br><span class="line">        List&lt;Article&gt; articles = search();</span><br><span class="line"></span><br><span class="line">        BulkRequest.<span class="type">Builder</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BulkRequest</span>.Builder();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Article article : articles) &#123;</span><br><span class="line">            article.setTitle(<span class="string">&quot;测试&quot;</span>);</span><br><span class="line">            br.operations(op -&gt; op</span><br><span class="line">                    .index(idx -&gt; idx</span><br><span class="line">                            .index(<span class="string">&quot;test_bulk&quot;</span>)</span><br><span class="line">                            .id(article.getId())</span><br><span class="line">                            .document(article)</span><br><span class="line">                    )</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">BulkResponse</span> <span class="variable">result</span> <span class="operator">=</span> esClient.bulk(br.build());</span><br><span class="line"></span><br><span class="line"><span class="comment">// Log errors, if any</span></span><br><span class="line">        <span class="keyword">if</span> (result.errors()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Bulk had errors&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (BulkResponseItem item : result.items()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (item.error() != <span class="literal">null</span>) &#123;</span><br><span class="line"><span class="comment">//                    logger.error(item.error().reason());</span></span><br><span class="line">                    System.out.println(<span class="string">&quot;inter err&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ElasticSearchUtils.closeConnection();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">delete</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">ElasticsearchClient</span> <span class="variable">esClient</span> <span class="operator">=</span> ElasticSearchUtils.getConnection();</span><br><span class="line">        List&lt;Article&gt; articles = search();</span><br><span class="line">        <span class="keyword">for</span> (Article article : articles) &#123;</span><br><span class="line">            esClient.delete(d -&gt; d</span><br><span class="line">                    .index(<span class="string">&quot;test_bulk&quot;</span>)</span><br><span class="line">                    .id(article.getId())</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sp520.github.io/blog/2024/08/17/ElasticSearch8-14-3/" data-id="clzx09ne60004o0v1fgjla1dm" data-title="ElasticSearch8.14.3" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/ElasticSearch/" rel="tag">ElasticSearch</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">IntelliJ_IDEA的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E6%8C%87%E5%8D%97/">指南</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ElasticSearch/" rel="tag">ElasticSearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Spring-Boot/" rel="tag">Spring Boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="tag">规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%BD%AF%E4%BB%B6/" rel="tag">软件</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/blog/tags/ElasticSearch/" style="font-size: 10px;">ElasticSearch</a> <a href="/blog/tags/Git/" style="font-size: 10px;">Git</a> <a href="/blog/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/blog/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/blog/tags/Python/" style="font-size: 10px;">Python</a> <a href="/blog/tags/Spring-Boot/" style="font-size: 10px;">Spring Boot</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 10px;">规范</a> <a href="/blog/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 10px;">软件</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/08/">八月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2024/08/17/ElasticSearch8-14-3/">ElasticSearch8.14.3</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/IntelliJ-IDEA%E7%9A%84%E4%BD%BF%E7%94%A8/">IntelliJ_IDEA的使用</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Git%E5%AE%9E%E7%94%A8%E6%93%8D%E4%BD%9C/">Git实用操作</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/SQL%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2/">SQL连接查询</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Docker%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">Docker安装指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/%E5%85%B3%E4%BA%8E%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%AF%E8%AF%AD%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95/">关于后端开发的术语标准写法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Spring%20Boot%E7%A2%8E%E7%A2%8E%E5%BF%B5/">Spring Boot碎碎念</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/hexo%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E6%8C%87%E5%8D%97/">Hexo一键部署指南</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2024/08/16/Python%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">python快速入门</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
